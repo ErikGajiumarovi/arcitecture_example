@@ -1,4 +1,4 @@
-# sante_demo
+# arcitecture_example
 
 This repository exists as a small demo project for showing how several ideas can work together in one codebase:
 
