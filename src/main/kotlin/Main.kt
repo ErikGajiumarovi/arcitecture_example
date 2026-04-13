@@ -1,6 +1,6 @@
 package org.example
 
-import arrow.core.raise.bind
+import arrow.core.raise.context.bind
 import arrow.core.raise.either
 import org.example.application.RegisterUserService
 import org.example.domain.entities.Profession
@@ -20,12 +20,12 @@ fun main() {
     )
 
     val result = either {
-        val user = User(
+        val user = User.create(
             id = Uuid.random(),
             name = UserName.create("Erik").bind(),
             age = Age.create(30).bind(),
             profession = Profession.SANTECHNIK,
-        )
+        ).bind()
 
         registerUser(user).bind()
         "User registered: ${user.name.value}"
